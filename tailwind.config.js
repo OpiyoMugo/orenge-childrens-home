@@ -8,6 +8,7 @@ export default {
 				mainBlack: '#1F1F1F',
 				mainBlue: '#13829B',
 				mainOrange: '#FBA018',
+				secondaryOrange: '#FCC29A',
 				mainWhite: '#F1F1F1',
 				hoverOrange: '#C98013',
 				secondaryGrey: 'rgba(251, 160.20, 24, 0.30)',

@@ -36,47 +36,40 @@
 
 <svelte:head>
 	<title>Orenge Children's Home</title>
-	<meta
-		name="description"
-		content="Orenge's children's home"
-	/>
-	
+	<meta name="description" content="Orenge's children's home" />
 </svelte:head>
 
 <Toaster />
 <!-- whole sections -->
-<img src="/assets/linepattern.svg" alt="linepattern" class="absolute right-0 top-0 z-30" />
+
 <!-- experience section  -->
-<div class="h-auto bg-mainBlue p-2 text-mainWhite sm:h-auto lg:mx-auto lg:p-8">
+<div class="h-auto bg-mainWhite p-2 text-mainBlack sm:h-auto lg:mx-auto lg:p-8">
 	<!-- experience the epitome section -->
 	<div
 		class="container mx-auto flex max-w-5xl flex-col items-center gap-4 py-4 sm:gap-24"
 		id="Home"
 	>
-		<img src="/assets/experience.svg" class="hidden sm:block" alt="experience" />
-		<img src="/assets/experiencesmall2.svg" class="sm:hidden" alt="experience" />
-		<div class="flex flex-col gap-16 sm:flex-row">
-			<div class="flex flex-col justify-center gap-2 tracking-wide sm:w-1/2 sm:text-lg">
-				<p>Tajji is the definitive platform that seamlessly</p>
-				<p>merges property management, property</p>
-				<p>discovery, and exploration into one</p>
-				<p>unparalleled real estate experience.</p>
+		<div class="flex gap-4 flex-col lg:flex-row w-full">
+			<div class=" flex- flex-col gap-3 lg:w-[1/3]">
+				<p class="text-mainBlue mt-4">-- TRUSTED CHILDREN’S HOME</p>
+
+				<p class="text-4xl font-bold mt-4">
+					Let’s Help And Make People Smile By <span class="text-mainBlue">Giving</span> Of Yours
+				</p>
+
+				<p class="mt-6">
+					No matter how small the donation you give will mean a lot to them, let's donate now to
+					help fellow humans in need
+				</p>
 			</div>
 			<!-- pointer section -->
 			<div class="relative w-auto p-1 sm:w-1/2">
 				<img
-					src="https://tajji-landing-page-media.ams3.cdn.digitaloceanspaces.com/landing-page/hero.webp"
-					class="w-full rotate-6 rounded-full"
+					src="/home/home.png"
+					class="w-full "
 					alt="hero"
 				/>
-				<a href="#Products" on:click={smoothScroll}>
-					<iconify-icon
-						icon="iconamoon:arrow-top-right-1"
-						width="40"
-						height="40"
-						class="absolute right-4 top-4 z-40 rounded-full bg-mainOrange p-2 text-black"
-					/>
-				</a>
+				
 			</div>
 		</div>
 	</div>

@@ -30,10 +30,9 @@
 		class="fixed bottom-0 left-0 right-0 z-50 flex items-center justify-between bg-mainBlue px-4 py-3 text-mainWhite opacity-100 lg:relative lg:top-0 lg:z-auto lg:mx-auto lg:px-10 lg:py-8"
 	>
 		<div>
-			<a href="/" class="flex items-center gap-3">
-				<!-- <img src="/logo.png" class="w-10" alt="logo" /> -->
-				<!-- <span class="hidden lg:block"> |</span> -->
-				<span class="hidden text-xl tracking-widest lg:block">Orenge's Children Home</span>
+			<a href="/" class="flex items-center justify-center gap-3">
+			
+				<span class="hidden text-xl tracking-widest lg:block ">Orenge's Children Home</span>
 			</a>
 		</div>
 		<button
@@ -74,7 +73,7 @@
 			<a
 				href="#Donate"
 				on:click={smoothScroll}
-				class="transform rounded-full border-mainOrange bg-mainOrange px-4 py-2 text-mainWhite transition-all duration-200 ease-in-out hover:scale-125 hover:border-mainOrange hover:bg-transparent hover:text-mainOrange"
+				class="transform rounded-lg border-mainOrange bg-mainOrange px-6 py-4 text-mainWhite transition-all duration-200 ease-in-out hover:scale-125 hover:border-mainOrange hover:bg-transparent hover:text-mainOrange"
 			>
 				donate
 			</a>
@@ -86,7 +85,7 @@
 		<div
 			in:fly={{ x: 200, duration: 200 }}
 			out:fly={{ x: 200, duration: 400 }}
-			class="fixed top-20 right-2 z-50 w-44 rounded-xl bg-mainBlue p-4 text-sm capitalize text-mainWhite opacity-90 lg:hidden lg:p-0"
+			class="fixed top-0 right-2 z-50 w-44 rounded-xl bg-mainBlue p-4 text-sm capitalize text-mainWhite opacity-90 lg:hidden lg:p-0"
 		>
 			<div class="flex w-full flex-col items-center gap-4">
 				<a
