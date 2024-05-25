@@ -115,7 +115,7 @@
 		</div>
 		<!-- Cards section -->
 
-		<div class="flex flex-col lg:flex-row gap-4">
+		<!-- <div class="flex flex-col lg:flex-row gap-4">
 			{#each cards as card, i (card.title)}
 				<Card>
 					<div class="flex flex-col items-center justify-center">
@@ -146,38 +146,105 @@
 					</div>
 				</Card>
 			{/each}
-		</div>
+		</div> -->
 	</div>
 </div>
 
 <!-- about us section -->
-<div class="bg-mainBlue md:pb-20" id="AboutUs">
-	<div class="flex gap-8 flex-col lg:flex-row w-full">
+<div class="bg-mainBlue md:pb-20 flex flex-col gap-5 " id="AboutUs">
+
+
+	<div class="flex gap-8 flex-col lg:flex-row w-full ">
+		<p
+			class="text-mainOrange mt-4 text-center justify-center items-start text-3xl lg:text-6xl lg:hidden"
+		>
+			About Us
+		</p>
 		<div class="relative w-auto lg:w-[40%] p-1 sm:w-1/2">
 			<img src="/about/about.png" class="w-" alt="hero" />
 		</div>
-		<div class=" flex flex-col gap-3 lg:w-[40%] px-2 items-center">
-			<p class="text-mainOrange mt-4 text-start justify-start items-start text-4xl lg:text-6xl">About Us</p>
+		<div class=" flex flex-col gap-3 lg:w-[40%] px-2 ">
+			<p
+				class="text-mainOrange mt-4 text-center justify-center items-start text-3xl lg:flex hidden"
+			>
+				About Us
+			</p>
 
 			<p class="text-4xl font-bold mt-4 lg:text-5xl text-mainWhite">
 				We’re a Non-Profit Charity & NGO Organization
 			</p>
 
-			<p class="mt-6 lg:mt-10 text-secondaryGrey">
-				No matter how small the donation you give will mean a lot to them, let's donate now to help
-				fellow humans in need
+			<div class="bg-mainOrange rounded-lg w-[100px] h-1"></div>
+
+			<p class="mt-6 lg:mt-10 text-mainWhite ">
+				Join us and make your life more valuable and useful, be a part of us and contribute to the
+				nation and state and the simplest for the environment and yourself
 			</p>
 
-			<div class="w-full items-center justify-center flex lg:items-start lg:justify-start">
-				<a
-					href="#Donate"
-					on:click={smoothScroll}
-					class="flex w-[200px] justify-center items-center text-mainWhite rounded-md my-4 lg:mt-10 bg-mainOrange px-4 py-3"
-				>
-					Donate
-				</a>
+			<div class="flex flex-col space-y-4 text-mainWhite ">
+				<div class="flex items-center space-x-2">
+					<div class="w-7 h-7 bg-mainOrange rounded-full flex items-center justify-center">
+						<Icon icon="hugeicons:tick-02" height="24" style="color: white" />
+					</div>
+					<div class="text-sm ">Support people in extreme need</div>
+				</div>
+				<div class="flex items-center space-x-2">
+					<div class="w-7 h-7 bg-mainOrange rounded-full flex items-center justify-center">
+						<Icon icon="hugeicons:tick-02" height="24" style="color: white" />
+					</div>
+					<div class="text-sm">Largest global crowdfunding community</div>
+				</div>
+				<div class="flex items-center space-x-2">
+					<div class="w-7 h-7 bg-mainOrange rounded-full flex items-center justify-center">
+						<Icon icon="hugeicons:tick-02" height="24" style="color: white" />
+					</div>
+					<div class="text-sm">Make the world a better place</div>
+				</div>
+
+				<div class="flex items-center space-x-2">
+					<div class="w-7 h-7 bg-mainOrange rounded-full flex items-center justify-center">
+						<Icon icon="hugeicons:tick-02" height="24" style="color: white" />
+					</div>
+					<div class="text-sm">Share your love for community</div>
+				</div>
 			</div>
+
+			
 		</div>
+	</div>
+
+
+	<div class="flex flex-col lg:flex-row gap-4 px-8 items-center justify-center my-10">
+		{#each cards as card, i (card.title)}
+			<Card>
+				<div class="flex flex-col items-center justify-center">
+					<div class="flex justify-center items-center my-2">
+						<img src={card.imageUrl} class="w-10 h-10 justify-center items-center" alt="hero" />
+					</div>
+					<h5 class="mb-2 text-2xl font-bold text-gray-900 dark:text-white">{card.title}</h5>
+					<p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{card.description}</p>
+					{#if !card.expanded}
+						<button on:click={() => (cards[i].expanded = true)} class="flex flex-row">
+							<p class="text-mainOrange text-start">Read more</p>
+							<Icon icon="formkit:arrowdown" class="w-6 h-6 ms-2 text-mainOrange " />
+						</button>
+					{/if}
+					{#if card.expanded}
+						<p class="font-normal text-gray-700 dark:text-gray-400" transition:scale>
+							{card.expandedContent}
+						</p>
+						<button
+							on:click={() => (cards[i].expanded = false)}
+							transition:scale
+							class="flex flex-row"
+						>
+							<p class="text-mainOrange text-start">Read less</p>
+							<Icon icon="formkit:arrowup" class="w-6 h-6 ms-2 text-mainOrange " />
+						</button>
+					{/if}
+				</div>
+			</Card>
+		{/each}
 	</div>
 </div>
 <!-- About us -->
