@@ -11,6 +11,7 @@
 	import { page } from '$app/stores';
 
 	import { onMount } from 'svelte';
+	import { scale } from 'svelte/transition';
 
 	export let data: PageData;
 	export let isSubmitted = false;
@@ -28,6 +29,47 @@
 	}
 
 	let showExpandedContent = false;
+
+	const cards = [
+		{
+			title: 'Medicine Help',
+			description:
+				'At our childrens home, we prioritize the health and well-being of every child. Our Medicine Help program ensures that all children receive the necessary medical attention and medications they need.',
+			expandedContent:
+				'We work closely with healthcare professionals to provide regular health check-ups, vaccinations, and treatment for any illnesses. Our dedicated staff carefully administers and monitors all medications, ensuring each child follows their prescribed regimen. By offering comprehensive medical support, we aim to create a nurturing environment where children can grow healthy and thrive. Your support helps us maintain these vital services and improve the quality of life for our children.',
+			imageUrl: '/cards/medicine.png',
+			expanded: false
+		},
+
+		{
+			title: 'Water Delivery',
+			description:
+				'Water Access to clean, safe water is essential for the health and well-being of our children. Our Water Delivery program ensures that all our facilities have a reliable supply of fresh water.',
+			expandedContent:
+				'We use advanced filtration systems to provide drinking water and maintain hygienic conditions. By safeguarding this basic necessity, we protect our children from waterborne diseases and promote overall health. Your support allows us to maintain and expand these vital services, ensuring every child has access to the clean water they need to thrive.',
+			imageUrl: '/cards/water.png',
+			expanded: false
+		},
+	
+		{
+			title: 'Education',
+			description:
+				'At our childrens home, education is a cornerstone of our mission. We provide a safe and supportive learning environment where children can pursue their academic goals. ',
+			expandedContent:
+				'Our dedicated teachers and volunteers offer personalized tutoring, access to educational resources, and extracurricular activities to foster a love of learning. By ensuring every child has the opportunity to succeed academically, we aim to open doors to brighter futures. Your contributions help us supply books, school supplies, and other essential materials that make a lasting impact on our childrens education.',
+			imageUrl: '/cards/education.png',
+			expanded: false
+		},
+		{
+			title: 'Food Delivery',
+			description:
+				'Nutrition is key to the growth and development of the children in our care. Our Food Delivery program guarantees that every child receives nutritious, balanced meals every day. ',
+			expandedContent:
+				'We work with nutritionists to plan healthy menus and source fresh ingredients. Our dedicated kitchen staff prepares meals with love and care, catering to the dietary needs of each child. By providing wholesome food, we ensure that our children have the energy and nutrients they need to grow and succeed. Your generosity helps us continue to provide these essential meals and fight hunger within our community.',
+			imageUrl: '/cards/food.png',
+			expanded: false
+		}
+	];
 </script>
 
 <svelte:head>
@@ -73,42 +115,28 @@
 		</div>
 		<!-- Cards section -->
 
-		<div class="flex flex-col lg:flex-row">
-			<div class="space-y-4">
+		<div class="flex flex-col lg:flex-row gap-4">
+			{#each cards as card, i (card.title)}
 				<Card>
 					<div class="flex flex-col items-center justify-center">
-						<div class=" flex justify-center items-center my-2">
-							<img
-								src="/cards/medicine.png"
-								class="w-10 h-10 justify-center items-center"
-								alt="hero"
-							/>
+						<div class="flex justify-center items-center my-2">
+							<img src={card.imageUrl} class="w-10 h-10 justify-center items-center" alt="hero" />
 						</div>
-
-						<h5 class="mb-2 text-2xl font-bold text-gray-900 dark:text-white">Medicine Help</h5>
-						<p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-							Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse
-							chronological order.
-						</p>
-
-						{#if !showExpandedContent}
-							<button
-								on:click={() => (showExpandedContent = !showExpandedContent)}
-								class="flex flex-row"
-							>
+						<h5 class="mb-2 text-2xl font-bold text-gray-900 dark:text-white">{card.title}</h5>
+						<p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{card.description}</p>
+						{#if !card.expanded}
+							<button on:click={() => (cards[i].expanded = true)} class="flex flex-row">
 								<p class="text-mainOrange text-start">Read more</p>
 								<Icon icon="formkit:arrowdown" class="w-6 h-6 ms-2 text-mainOrange " />
 							</button>
 						{/if}
-
-						{#if showExpandedContent}
-							<p class="font-normal text-gray-700 dark:text-gray-400">
-								This is the expanded content. It can contain additional paragraphs or details that
-								were previously hidden.
+						{#if card.expanded}
+							<p class="font-normal text-gray-700 dark:text-gray-400" transition:scale>
+								{card.expandedContent}
 							</p>
-
 							<button
-								on:click={() => (showExpandedContent = !showExpandedContent)}
+								on:click={() => (cards[i].expanded = false)}
+								transition:scale
 								class="flex flex-row"
 							>
 								<p class="text-mainOrange text-start">Read less</p>
@@ -117,7 +145,7 @@
 						{/if}
 					</div>
 				</Card>
-			</div>
+			{/each}
 		</div>
 	</div>
 </div>
