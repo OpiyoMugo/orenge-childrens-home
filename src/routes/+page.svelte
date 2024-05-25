@@ -168,7 +168,7 @@
 			</p>
 
 			<p class="text-4xl font-bold mt-4 lg:text-5xl text-mainWhite">
-				We’re a Non-Profit Charity & NGO Organization
+				We're a Non-Profit Charity & NGO Organization
 			</p>
 
 			<div class="bg-mainOrange rounded-lg w-[100px] h-1"></div>
@@ -284,7 +284,7 @@
 		<div class="flex items-center justify-center flex-col">
 			<p class="text-mainWhite text-3xl lg:text-4xl font-bold py-4">Orenge's Children Home</p>
 			<p class="text-mainWhite w-[80%] lg:w-[60%] items-center justify-center">
-				Care about people to transforming their lives and exudes a positives Impressiono believe.
+				Care about people by transforming their lives and exude a positive Impression of belief in
 				fundraising NGO organizations.
 			</p>
 
