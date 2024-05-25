@@ -1,6 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-	content: ['./src/**/*.{html,js,ts,svelte}'],
+	content: [
+		'./src/**/*.{html,js,ts,svelte}',
+		'./node_modules/flowbite-svelte/**/*.{html,js,svelte,ts}'
+	],
+
+	plugins: [require('flowbite/plugin')],
 	theme: {
 		extend: {
 			colors: {
@@ -11,7 +16,7 @@ export default {
 				secondaryOrange: '#FCC29A',
 				mainWhite: '#F1F1F1',
 				hoverOrange: '#C98013',
-				secondaryGrey: 'rgba(251, 160.20, 24, 0.30)',
+				secondaryGrey: '#989898',
 				mainGreen: '#0AB04C',
 				mainIndigo: '#232876'
 			},
@@ -21,5 +26,4 @@ export default {
 			}
 		}
 	}
-	// plugins: [require('@tailwindcss/forms')]
 };

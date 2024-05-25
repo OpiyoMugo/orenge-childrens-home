@@ -27,7 +27,7 @@
 
 <div class="relative">
 	<nav
-		class="fixed bottom-0 left-0 right-0 z-50 flex items-center justify-between bg-mainBlue px-4 py-3 text-mainWhite opacity-100 lg:relative lg:top-0 lg:z-auto lg:mx-auto lg:px-10 lg:py-8"
+		class="fixed top-0 right-0 left-0  z-50 flex items-center justify-between bg-mainBlue px-4 py-3  text-mainWhite opacity-100 lg:relative lg:top-0 lg:z-auto lg:mx-auto lg:px-10 lg:py-8"
 	>
 		<div>
 			<a href="/" class="flex items-center justify-center gap-3">
@@ -85,7 +85,7 @@
 		<div
 			in:fly={{ x: 200, duration: 200 }}
 			out:fly={{ x: 200, duration: 400 }}
-			class="fixed top-0 right-2 z-50 w-44 rounded-xl bg-mainBlue p-4 text-sm capitalize text-mainWhite opacity-90 lg:hidden lg:p-0"
+			class="fixed top-12 right-2 z-50 w-44 rounded-xl bg-mainBlue p-4 text-sm capitalize text-mainWhite opacity-90 lg:hidden lg:p-0"
 		>
 			<div class="flex w-full flex-col items-center gap-4">
 				<a
