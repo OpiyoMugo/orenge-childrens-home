@@ -9,9 +9,10 @@
 	import Icon from '@iconify/svelte';
 
 	import { page } from '$app/stores';
-
+	import PayPal from '../components/paypal.svelte';
 	import { onMount } from 'svelte';
 	import { scale } from 'svelte/transition';
+	import Message from '../components/message.svelte';
 
 	export let data: PageData;
 	export let isSubmitted = false;
@@ -151,10 +152,8 @@
 </div>
 
 <!-- about us section -->
-<div class="bg-mainBlue md:pb-20 flex flex-col gap-5 " id="AboutUs">
-
-
-	<div class="flex gap-8 flex-col lg:flex-row w-full ">
+<div class="bg-mainBlue md:pb-20 flex flex-col gap-5" id="AboutUs">
+	<div class="flex gap-8 flex-col lg:flex-row w-full">
 		<p
 			class="text-mainOrange mt-4 text-center justify-center items-start text-3xl lg:text-6xl lg:hidden"
 		>
@@ -163,10 +162,8 @@
 		<div class="relative w-auto lg:w-[40%] p-1 sm:w-1/2">
 			<img src="/about/about.png" class="w-" alt="hero" />
 		</div>
-		<div class=" flex flex-col gap-3 lg:w-[40%] px-2 ">
-			<p
-				class="text-mainOrange mt-4 text-center justify-center items-start text-3xl lg:flex hidden"
-			>
+		<div class=" flex flex-col gap-3 lg:w-[40%] px-2">
+			<p class="text-mainOrange mt-4 text-start justify-start items-start text-3xl lg:flex hidden">
 				About Us
 			</p>
 
@@ -176,17 +173,17 @@
 
 			<div class="bg-mainOrange rounded-lg w-[100px] h-1"></div>
 
-			<p class="mt-6 lg:mt-10 text-mainWhite ">
+			<p class="mt-6 lg:mt-10 text-mainWhite">
 				Join us and make your life more valuable and useful, be a part of us and contribute to the
 				nation and state and the simplest for the environment and yourself
 			</p>
 
-			<div class="flex flex-col space-y-4 text-mainWhite ">
+			<div class="flex flex-col space-y-4 text-mainWhite">
 				<div class="flex items-center space-x-2">
 					<div class="w-7 h-7 bg-mainOrange rounded-full flex items-center justify-center">
 						<Icon icon="hugeicons:tick-02" height="24" style="color: white" />
 					</div>
-					<div class="text-sm ">Support people in extreme need</div>
+					<div class="text-sm">Support people in extreme need</div>
 				</div>
 				<div class="flex items-center space-x-2">
 					<div class="w-7 h-7 bg-mainOrange rounded-full flex items-center justify-center">
@@ -208,11 +205,17 @@
 					<div class="text-sm">Share your love for community</div>
 				</div>
 			</div>
-
-			
 		</div>
 	</div>
 
+	<div class="flex items-center flex-col justify-center gap-3">
+		<p class="text-4xl font-bold mt-4 lg:text-5xl items-center justify-center flex text-mainWhite">
+			What We do
+		</p>
+		<div
+			class="bg-mainOrange rounded-lg w-[200px] lg:w-[300px] justify-center items-center flex h-1"
+		></div>
+	</div>
 
 	<div class="flex flex-col lg:flex-row gap-4 px-8 items-center justify-center my-10">
 		{#each cards as card, i (card.title)}
@@ -247,47 +250,31 @@
 		{/each}
 	</div>
 </div>
+
 <!-- About us -->
-<div id="Contact">
-	<div
-		class=" w-full bg-mainWhite bg-[url('/assets/about.webp')] bg-center bg-no-repeat px-4 py-8 opacity-100 lg:bg-cover"
-	>
-		<div class="container mx-auto flex w-full max-w-5xl flex-col gap-6 lg:flex-row">
-			<div
-				class="flex items-center justify-center pt-4 text-xl text-white lg:w-1/3 lg:grow lg:items-start lg:pl-4 lg:text-3xl"
-			>
-				<div class="flex items-center justify-center gap-2">
-					<p class="shrink-0 font-bold capitalize">About us</p>
+<div id="Donate">
+	<div class="container mx-auto flex mt-4 flex-col items-center gap-4 py-4 sm:gap-24">
+		<div class="flex gap-4 flex-col lg:flex-row w-full">
+			<div class=" flex flex-col gap-3 lg:w-[40%] p-2">
+				<p class="text-4xl font-bold mt-4 lg:text-6xl">
+					Let’s Help And Make People Smile By <span class="text-mainBlue">Giving</span> Of Yours
+				</p>
+
+				<p class="mt-6 lg:mt-10 text-secondaryGrey">
+					By Donating $1 or your used clothes, shoes, e.t.c, We commit to packaging and shipping to
+					provide needy families and kids without clothes. Your donation, no matter how much, will
+					help us reach more poor communities and empower them.
+				</p>
+
+				<div class="flex space-x-4 text-center items-center justify-center mt-4">
+					<PayPal />
 				</div>
 			</div>
 
-			<div class="flex flex-col gap-4 px-6 sm:items-center lg:w-auto lg:flex-row lg:justify-around">
-				<div class=" text-bold flex flex-col gap-4 sm:items-center md:items-start">
-					<div
-						class="flex flex-col text-xl font-semibold uppercase tracking-wider text-mainWhite sm:text-5xl lg:gap-4 lg:tracking-normal"
-					>
-						<h1
-							class="bg-gradient-to-r from-mainWhite from-40% to-mainBlack bg-clip-text text-transparent lg:from-mainWhite"
-						>
-							proptech solutions
-						</h1>
-						<h1 class="bg-gradient-to-r from-mainWhite to-mainBlack bg-clip-text text-transparent">
-							crafted to redefine
-						</h1>
-						<h1>property management</h1>
-					</div>
-					<div class="flex flex-col gap-4 pt-3 text-sm text-mainWhite md:items-center md:text-lg">
-						<p>
-							At Tajji, we are on a mission to build seamless, intuitive experiences that foster
-							harmonious landlord-tenant relationships and streamline property management processes.
-						</p>
-					</div>
-					<div class="flex w-full items-center justify-start pt-3">
-						<button
-							class="rounded-full border border-mainOrange bg-mainOrange px-5 py-2 capitalize text-mainWhite hover:border-mainOrange hover:bg-transparent hover:text-mainOrange md:text-lg"
-							>Join our Community</button
-						>
-					</div>
+			<div class="">
+				<!-- Send us a message -->
+				<div class=" bg-mainBlue">
+					<Message />
 				</div>
 			</div>
 		</div>
