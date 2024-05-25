@@ -17,6 +17,7 @@ export default {
 				mainWhite: '#F1F1F1',
 				hoverOrange: '#C98013',
 				secondaryGrey: '#989898',
+				tertiaryGrey: '#384C56',
 				mainGreen: '#0AB04C',
 				mainIndigo: '#232876'
 			},

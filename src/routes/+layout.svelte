@@ -5,7 +5,6 @@
 
 	import { tick } from 'svelte';
 
-
 	$: isOpen = false;
 
 	/**
@@ -13,26 +12,23 @@
 	 */
 	async function smoothScroll(event) {
 		isOpen = false;
-		
-			event.preventDefault();
-			const targetId = event.currentTarget.getAttribute('href');
-			const targetElement = document.querySelector(targetId);
-			if (targetElement) {
-				targetElement.scrollIntoView({ behavior: 'smooth' });
-			}
-		
+
+		event.preventDefault();
+		const targetId = event.currentTarget.getAttribute('href');
+		const targetElement = document.querySelector(targetId);
+		if (targetElement) {
+			targetElement.scrollIntoView({ behavior: 'smooth' });
+		}
 	}
 </script>
 
-
 <div class="relative">
 	<nav
-		class="fixed top-0 right-0 left-0  z-50 flex items-center justify-between bg-mainBlue px-4 py-3  text-mainWhite opacity-100 lg:relative lg:top-0 lg:z-auto lg:mx-auto lg:px-10 lg:py-8"
+		class="fixed top-0 right-0 left-0 z-50 flex items-center justify-between bg-mainBlue px-4 py-3 text-mainWhite opacity-100 lg:relative lg:top-0 lg:z-auto lg:mx-auto lg:px-10 lg:py-8"
 	>
 		<div>
 			<a href="/" class="flex items-center justify-center gap-3">
-			
-				<span class="hidden text-xl tracking-widest lg:block ">Orenge's Children Home</span>
+				<span class="hidden text-xl tracking-widest lg:block">Orenge's Children Home</span>
 			</a>
 		</div>
 		<button
@@ -54,19 +50,24 @@
 			{/if}
 		</button>
 		<!-- larger screens menu -->
-		<div class="w-[60%] hidden h-12 justify-center capitalize lg:z-50 lg:block lg:flex-row lg:space-x-8">
+		<div
+			class="w-[60%] hidden h-12 justify-center capitalize lg:z-50 lg:block lg:flex-row lg:space-x-8"
+		>
 			<a
 				href="#Home"
 				on:click={smoothScroll}
-				class=" transform transition-all duration-200 ease-in-out text-xl hover:text-mainOrange">home</a
+				class=" transform transition-all duration-200 ease-in-out text-xl hover:text-mainOrange"
+				>home</a
 			>
 			<a
 				href="#AboutUs"
 				on:click={smoothScroll}
-				class=" transform transition-all duration-200 ease-in-out text-xl hover:text-mainOrange">about us</a
+				class=" transform transition-all duration-200 ease-in-out text-xl hover:text-mainOrange"
+				>about us</a
 			>
 			<a
 				href="#Contact"
+				on:click={smoothScroll}
 				class="transform transition-all duration-200 ease-in-out text-xl hover:text-mainOrange"
 				>contact
 			</a>
@@ -98,7 +99,7 @@
 					on:click={smoothScroll}
 					class="flex w-full justify-center px-4 hover:text-mainOrange">about us</a
 				>
-				
+
 				<a
 					href="#Contact"
 					on:click={smoothScroll}
@@ -116,29 +117,10 @@
 		</div>
 	{/if}
 	<slot><!-- optional fallback --></slot>
-	<footer class="bottom-0 left-0 right-0 bg-mainBlue px-8 pb-20 text-white lg:pb-0">
-		<div class="w-full lg:flex lg:items-center lg:justify-between">
-			<div class="flex items-center justify-center py-3 md:ml-10">
-				<img class=" w-10 lg:w-20" src="logo.png" alt="logo.png" />
-				<p class="shrink-0 font-bold tracking-wider">tajji</p>
-			</div>
-			<div class=" flex items-center justify-center gap-5 py-3 md:ml-10">
-				<a href="https://www.facebook.com/TajjiRealty" target="_blank" class="hover:text-mainOrange"
-					><iconify-icon icon="mdi:facebook" width="30" /></a
-				>
-				<a href="https://twitter.com/TajjiRealty" target="_blank" class="hover:text-mainOrange">
-					<iconify-icon icon="fa6-brands:x-twitter" width="25" />
-				</a>
-				<a
-					target="_blank"
-					href="https://www.linkedin.com/company/tajji-ltd/"
-					class="h-10 w-10 hover:text-mainOrange"><iconify-icon icon="mdi:linkedin" width="30" /></a
-				>
-			</div>
-
-			<div class="flex items-center justify-center md:ml-10">
-				© Tajji ltd. {new Date().getFullYear()}. All rights reserved
-			</div>
+	<footer class="bottom-0  bg-mainBlue px-8 py-10 text-white items-center justify-center flex flex-col lg:flex-row">
+		<div class="flex items-center justify-center md:ml-10">Designed by VOXART Studios</div>
+		<div class="flex items-center justify-center md:ml-10">
+			© VOXART. {new Date().getFullYear()}. All rights reserved
 		</div>
 	</footer>
 </div>

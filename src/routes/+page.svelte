@@ -254,8 +254,8 @@
 <!-- About us -->
 <div id="Donate">
 	<div class="container mx-auto flex mt-4 flex-col items-center gap-4 py-4 sm:gap-24">
-		<div class="flex gap-4 flex-col lg:flex-row w-full">
-			<div class=" flex flex-col gap-3 lg:w-[40%] p-2">
+		<div class="flex gap-4 flex-col lg:flex-row w-full justify-end">
+			<div class=" flex flex-col gap-3 lg:w-[60%] p-2">
 				<p class="text-4xl font-bold mt-4 lg:text-6xl">
 					Let’s Help And Make People Smile By <span class="text-mainBlue">Giving</span> Of Yours
 				</p>
@@ -271,12 +271,48 @@
 				</div>
 			</div>
 
-			<div class="">
-				<!-- Send us a message -->
-				<div class=" bg-mainBlue">
-					<Message />
-				</div>
+			<div class=" flex lg:w-[40%] justify-end">
+				<Message />
 			</div>
 		</div>
 	</div>
+</div>
+
+<div class="w-full" id="Contact">
+	<div class="lg:flex flex-row bg-mainBlue w-full items-center py-5 justify-center">
+		<!-- Socials -->
+		<div class="flex items-center justify-center flex-col">
+			<p class="text-mainWhite text-3xl lg:text-4xl font-bold py-4">Orenge's Children Home</p>
+			<p class="text-mainWhite w-[80%] lg:w-[60%] items-center justify-center">
+				Care about people to transforming their lives and exudes a positives Impressiono believe.
+				fundraising NGO organizations.
+			</p>
+
+			<div class=" flex items-center justify-center flex-row gap-5 py-3 md:ml-10">
+				<a href="/" target="_blank" class="hover:text-mainOrange text-mainWhite"
+					><iconify-icon icon="mdi:facebook" width="30" /></a
+				>
+				<a href="/" target="_blank" class="hover:text-mainOrange text-mainWhite">
+					<iconify-icon icon="fa6-brands:x-twitter" width="25" />
+				</a>
+				<a target="_blank" href="/" class="h-10 w-10 hover:text-mainOrange text-mainWhite"
+					><iconify-icon icon="mdi:linkedin" width="30" /></a
+				>
+			</div>
+		</div>
+
+		<!-- Number -->
+
+		<div
+			class=" flex flex-col items-center justify-center  gap-6 lg:items-start bg-tertiaryGrey py-20 lg:py-24 lg:px-40 mx-2"
+		>
+			<p class="font-bold text-2xl text-mainOrange">Contact Us</p>
+			<div class="text-mainWhite">
+				<p>email@gmail.com</p>
+				<p>111-1-1-111</p>
+			</div>
+		</div>
+	</div>
+
+	<hr />
 </div>

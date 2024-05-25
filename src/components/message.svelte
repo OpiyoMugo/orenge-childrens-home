@@ -1,17 +1,17 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
-	let fullName = ''; // Updated variable name
+	let fullName = ''; 
 	let email = '';
-	let phoneNumber = ''; // New variable for phone number
+	let phoneNumber = ''; 
 	let message = '';
 </script>
 
 <!-- Main div -->
-<div class="bg-gray-100 lg:bg-mainWhite lg:rounded-xl">
+<div class="bg-gray-100 lg:rounded-xl">
 	<div class="flex flex-col gap-2 px-2 py-5 items-center justify-center">
-		<p class="text-center text-4xl font-extrabold">BECOME A VOLUNTEER</p>
+		<p class="text-center text-2xl font-extrabold">BECOME A VOLUNTEER</p>
 
-		<p class="justify-center text-center">
+		<p class="justify-center text-center p-4">
 			We're excited to welcome new volunteers Fill out the form below to join our team.
 		</p>
 	</div>
@@ -31,7 +31,7 @@
 						required
 						type="text"
 						name="Full Name"
-						class="border border-mainBlack focus:outline-mainOrange p-5"
+						class="p-5"
 						placeholder="Full Name"
 						bind:value={fullName}
 					/>
@@ -41,7 +41,7 @@
 						required
 						type="email"
 						name="email"
-						class="border border-mainBlack focus:outline-mainOrange p-5"
+						class="  p-5"
 						placeholder="Email Address"
 						bind:value={email}
 					/>
@@ -51,7 +51,7 @@
 						required
 						type="tel"
 						name="Phone Number"
-						class="border border-mainBlack focus:outline-mainOrange p-5"
+						class=" p-5"
 						placeholder="Phone Number"
 						bind:value={phoneNumber}
 					/>
@@ -60,21 +60,18 @@
 					<textarea
 						required
 						name="Message"
-						class="w-full h-[150px] border border-mainBlack focus:outline-mainOrange p-3"
-						placeholder="How can you contribute?"
+						class="h-[200px] p-5"
+						placeholder="Message"
 						bind:value={message}
 					/>
 				</label>
+			</div>
+			<div class="flex justify-end p-4">
 				<button
 					type="submit"
-					class="h-[60px] w-[200px] ml-4 text-xl flex flex-row gap-3 items-center justify-center p-4 border border-mainGold bg-mainGold text-mainWhite hover:border-mainGold hover:bg-transparent hover:text-mainGold"
-					>Become a Volunteer <Icon
-						icon="formkit:submit"
-						color="hover:text-mainOrange"
-						width="50"
-						height="30"
-					/></button
-				>
+					class="h-[60px] w-[200px] text-md flex flex-row gap-3 items-center justify-center p-4 bg-mainBlue text-mainWhite hover:bg-mainOrange rounded-md"
+					>Submit Now
+				</button>
 			</div>
 		</form>
 	</div>
