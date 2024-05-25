@@ -50,7 +50,7 @@
 			imageUrl: '/cards/water.png',
 			expanded: false
 		},
-	
+
 		{
 			title: 'Education',
 			description:
@@ -109,7 +109,7 @@
 				</div>
 			</div>
 
-			<div class="relative w-auto lg:w-[505] p-1 sm:w-1/2">
+			<div class="relative w-auto lg:w-[50] p-1 sm:w-1/2">
 				<img src="/home/home.png" class="w-full" alt="hero" />
 			</div>
 		</div>
@@ -150,19 +150,40 @@
 	</div>
 </div>
 
-<!-- products section -->
-<div class="bg-mainWhite md:pb-20">
-	<div class="container mx-auto max-w-5xl p-4" id="Products">
-		<div class="w-full">
-			<h1 class="flex justify-center pb-3 text-3xl font-semibold capitalize">our products</h1>
+<!-- about us section -->
+<div class="bg-mainBlue md:pb-20" id="AboutUs">
+	<div class="flex gap-8 flex-col lg:flex-row w-full">
+		<div class="relative w-auto lg:w-[40%] p-1 sm:w-1/2">
+			<img src="/about/about.png" class="w-" alt="hero" />
 		</div>
-		<div class="z-40 flex w-full flex-col justify-between"></div>
+		<div class=" flex flex-col gap-3 lg:w-[40%] px-2 items-center">
+			<p class="text-mainOrange mt-4 text-start justify-start items-start text-4xl lg:text-6xl">About Us</p>
+
+			<p class="text-4xl font-bold mt-4 lg:text-5xl text-mainWhite">
+				We’re a Non-Profit Charity & NGO Organization
+			</p>
+
+			<p class="mt-6 lg:mt-10 text-secondaryGrey">
+				No matter how small the donation you give will mean a lot to them, let's donate now to help
+				fellow humans in need
+			</p>
+
+			<div class="w-full items-center justify-center flex lg:items-start lg:justify-start">
+				<a
+					href="#Donate"
+					on:click={smoothScroll}
+					class="flex w-[200px] justify-center items-center text-mainWhite rounded-md my-4 lg:mt-10 bg-mainOrange px-4 py-3"
+				>
+					Donate
+				</a>
+			</div>
+		</div>
 	</div>
 </div>
 <!-- About us -->
-<div id="AboutUs">
+<div id="Contact">
 	<div
-		class=" w-full bg-mainBlue bg-[url('/assets/about.webp')] bg-center bg-no-repeat px-4 py-8 opacity-100 lg:bg-cover"
+		class=" w-full bg-mainWhite bg-[url('/assets/about.webp')] bg-center bg-no-repeat px-4 py-8 opacity-100 lg:bg-cover"
 	>
 		<div class="container mx-auto flex w-full max-w-5xl flex-col gap-6 lg:flex-row">
 			<div
