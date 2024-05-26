@@ -168,7 +168,7 @@
 			</p>
 
 			<p class="text-4xl font-bold mt-4 lg:text-5xl text-mainWhite">
-				We're a Non-Profit Charity & NGO Organization
+				We're a Non-Governmental Organization
 			</p>
 
 			<div class="bg-mainOrange rounded-lg w-[100px] h-1"></div>
